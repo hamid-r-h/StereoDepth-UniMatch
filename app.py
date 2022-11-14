@@ -136,25 +136,23 @@ def inference(image1, image2, task='flow'):
 
 title = "UniMatch"
 
-description = "<p style='text-align: center'>Optical flow and stereo matching demo for <a href='https://haofeixu.github.io/unimatch/' target='_blank'>Unifying Flow, Stereo and Depth Estimation</a> | <a href='https://arxiv.org/abs/2211.05783' target='_blank'>Paper</a> | <a href='https://github.com/autonomousvision/unimatch' target='_blank'>Code</a> | <a href='https://colab.research.google.com/drive/1r5m-xVy3Kw60U-m5VB-aQ98oqqg_6cab?usp=sharing' target='_blank'>Colab</a><br>Simply upload your images or click one of the provided examples.<br>The <strong>first three</strong> examples are video frames for <strong>flow</strong> task, and the <strong>last three</strong> are stereo pairs for <strong>stereo</strong> task.<br><strong>Select the task type according to your input images</strong>.</p>"
+description = "<p style='text-align: center'>Optical flow and stereo matching demo for <a href='https://haofeixu.github.io/unimatch/' target='_blank'>Unifying Flow, Stereo and Depth Estimation</a> | <a href='https://arxiv.org/abs/2211.05783' target='_blank'>Paper</a> | <a href='https://github.com/autonomousvision/unimatch' target='_blank'>Code</a> | <a href='https://colab.research.google.com/drive/1r5m-xVy3Kw60U-m5VB-aQ98oqqg_6cab?usp=sharing' target='_blank'>Colab</a><br>Task <strong>flow</strong>: Image1: <strong>video frame t</strong>, Image2: <strong>video frame t+1</strong>; Task <strong>stereo</strong>: Image1: <strong>left</strong> image, Image2: <strong>right</strong> image<br>Simply upload your images or click one of the provided examples.<br><strong>Select the task type according to your input images</strong>.</p>"
 
 examples = [
-    ['demo/flow_kitti_test_000197_10.png', 'demo/flow_kitti_test_000197_11.png'],
-    ['demo/flow_sintel_cave_3_frame_0049.png', 'demo/flow_sintel_cave_3_frame_0050.png'],
-    ['demo/flow_davis_skate-jump_00059.jpg', 'demo/flow_davis_skate-jump_00060.jpg'],
     ['demo/stereo_drivingstereo_test_2018-07-11-14-48-52_2018-07-11-14-58-34-673_left.jpg',
-     'demo/stereo_drivingstereo_test_2018-07-11-14-48-52_2018-07-11-14-58-34-673_right.jpg'],
-    ['demo/stereo_middlebury_plants_im0.png', 'demo/stereo_middlebury_plants_im1.png'],
-    ['demo/stereo_holopix_left.png', 'demo/stereo_holopix_right.png']
+     'demo/stereo_drivingstereo_test_2018-07-11-14-48-52_2018-07-11-14-58-34-673_right.jpg', 'stereo'],
+    ['demo/stereo_middlebury_plants_im0.png', 'demo/stereo_middlebury_plants_im1.png', 'stereo'],
+    ['demo/stereo_holopix_left.png', 'demo/stereo_holopix_right.png', 'stereo'],
+    ['demo/flow_kitti_test_000197_10.png', 'demo/flow_kitti_test_000197_11.png', 'flow'],
+    ['demo/flow_sintel_cave_3_frame_0049.png', 'demo/flow_sintel_cave_3_frame_0050.png', 'flow'],
+    ['demo/flow_davis_skate-jump_00059.jpg', 'demo/flow_davis_skate-jump_00060.jpg', 'flow']
 ]
 
 gr.Interface(
     inference,
     [gr.Image(type="pil", label="Image1"), gr.Image(type="pil", label="Image2"), gr.Radio(choices=['flow', 'stereo'], value='flow', label='Task')],
-    gr.Image(type="pil", label="Flow/Disparity"),
+    gr.Image(type="pil", label="flow/disparity"),
     title=title,
     description=description,
     examples=examples,
-    thumbnail="https://haofeixu.github.io/unimatch/resources/teaser.svg",
-    allow_flagging="auto",
-).launch(debug=True)
+).launch(debug=True, quiet=True)
