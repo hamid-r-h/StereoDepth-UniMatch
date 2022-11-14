@@ -32,3 +32,7 @@ saved_model/**/* filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.zst filter=lfs diff=lfs merge=lfs -text
 *tfevents* filter=lfs diff=lfs merge=lfs -text
+demo/stereo_middlebury_plants_im0.png filter=lfs diff=lfs merge=lfs -text
+demo/stereo_middlebury_plants_im1.png filter=lfs diff=lfs merge=lfs -text
+demo/stereo_holopix_left.png filter=lfs diff=lfs merge=lfs -text
+demo/stereo_holopix_right.png filter=lfs diff=lfs merge=lfs -text
