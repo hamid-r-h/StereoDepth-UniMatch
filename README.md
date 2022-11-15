@@ -1,8 +1,8 @@
 ---
-title: Unimatch
-emoji: 👀
-colorFrom: red
-colorTo: gray
+title: UniMatch
+emoji: 🔗
+colorFrom: green
+colorTo: purple
 sdk: gradio
 sdk_version: 3.9.1
 app_file: app.py
