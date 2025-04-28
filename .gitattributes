@@ -36,3 +36,8 @@ demo/stereo_middlebury_plants_im0.png filter=lfs diff=lfs merge=lfs -text
 demo/stereo_middlebury_plants_im1.png filter=lfs diff=lfs merge=lfs -text
 demo/stereo_holopix_left.png filter=lfs diff=lfs merge=lfs -text
 demo/stereo_holopix_right.png filter=lfs diff=lfs merge=lfs -text
+path/to/your/file filter=lfs diff=lfs merge=lfs -text
+pretrained/gmflow-scale2-regrefine6-mixdata-train320x576-4e7b215d.pth filter=lfs diff=lfs merge=lfs -text
+gmstereo-scale2-regrefine3-resumeflowthings-mixdata-train320x640-ft640x960-e4e291fd.pth filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.tif filter=lfs diff=lfs merge=lfs -text
